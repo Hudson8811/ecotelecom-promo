@@ -185,10 +185,10 @@ $(document).ready(function () {
 	})
 });
 
-$('.equipment_block .block .left_block .more_button').click(function (e) {
-	$(this).closest('.block').toggleClass('active');
-	$(this).closest('.block').find('.hide').slideToggle();
-});
+function toggleContent(elem){
+	$(elem).closest('.block').toggleClass('active');
+	$(elem).closest('.block').find('.hide').slideToggle();
+}
 
 
 $(document).ready(function () {
@@ -332,10 +332,7 @@ $(document).ready(function () {
 				$('.tarif_block .dt li.it2 a').removeClass('active');
 			});
 
-			$('.equipment_block .block .left_block .more_button').click(function (e) {
-				$(this).closest('.block').toggleClass('active');
-				$(this).closest('.block').find('.hide').slideToggle();
-			});
+
 
 
 			$('.call_me').click(function (e) {
