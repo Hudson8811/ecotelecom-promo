@@ -27,7 +27,7 @@ if (isset($_POST['call-control']) && $_POST['call-control'] == 0){
 	$headers = "MIME-Version: 1.0\r\n";
 	$headers = "Content-Type: text/plain;charset=utf-8";
   	$headers = "From: promo@ecotelecom.ru";
-	$subj = "=?utf-8?b?".base64_encode('Заявка с лэндинга Акция "Лето за наш счёт"')."?=";
+	$subj = "=?utf-8?b?".base64_encode('Заявка с лэндинга Акция "Улетное предложение"')."?=";
 	$text = "Имя: ".$name." \nТелефон: ".$number." \nГород: ".$city." \nАдрес: ".$address;
 	
 	if (!empty($utm_source)) $text .= "\nИсточник перехода по ссылке:".$utm_source;
