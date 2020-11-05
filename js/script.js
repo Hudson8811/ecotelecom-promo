@@ -12,31 +12,38 @@ $(function () {
 	});
 
 });
-
-$(".input-mask").mask("+7 (999) 999-99-99");
-
+$(document).ready(function(){
+	$(".input-mask").inputmask({
+		mask: "+7 (*99) 999-99-99",
+		greedy: false,
+		definitions: {
+			'*': {
+				validator: "[01234569]{1}",
+			}
+		}
+	});
+});
 $(document).ready(function () {
 	function falidator(item) {
-		check = true;
-		$(item).find('.required').each(function () {
-			if ($(this).hasClass('required') && $(this).val() == '') {
-				check = false;
-				$(this).css('border', '1px red solid');
+			check = true;
+			$(item).find('.required').each(function() {
+				if($(this).hasClass('required') && $(this).val() == '') {
+					check = false;
+					$(this).css('border', '1px red solid');
+				} else {
+					$(this).css('border', '1px transparent solid');
+				}
+			});
+			if(check) {
+				return true;
 			} else {
-				$(this).css('border', '1px #fff solid');
+				return false;
 			}
-		});
-		if (check) {
-			return true;
-		} else {
-			return false;
 		}
-	}
-
 
 	/**************************/
 	$("#form1").submit(function () {
-		if (!falidator(this)) return false;
+		if(!falidator(this)) return false;
 		var data = $("#form1").serialize();
 		if (utm_list) {
 			data += utm_list;
@@ -47,20 +54,14 @@ $(document).ready(function () {
 			data: data,
 			success: function (html) {
 				yaCounter49966909.reachGoal('order');
-				gtag('event', 'submit');
+				gtag('event', 'order');
+				gtag('event', 'submit',{'event_category': 'goal'});
 			},
 			complete: function (response) {
 				$('#form1').trigger("reset");
 			},
 			beforeSend: function (jqXHR, settings) {
-				Comagic.addOfflineRequest({
-					name: $("#name1").val(),
-					phone: $("#phone1").val(),
-					message: $("#adr1").val() + ' ' + $("#adr11").val(),
-					// group_id: 1234
-				}, function (o) {
-					console.log(o);
-				});
+
 			}
 		});
 		$('#spasibo').arcticmodal();
@@ -82,20 +83,14 @@ $(document).ready(function () {
 			data: data,
 			success: function (html) {
 				yaCounter49966909.reachGoal('order');
-				gtag('event', 'tarif');
+				gtag('event', 'order');
+				gtag('event', 'submit',{'event_category': 'goal'});
 			},
 			complete: function (response) {
 				$('#form0').trigger("reset");
 			},
 			beforeSend: function (jqXHR, settings) {
-				Comagic.addOfflineRequest({
-					name: $("#name0").val(),
-					phone: $("#phone0").val(),
-					message: $("#adr0").val() + ' ' + $("#adr01").val(),
-					// group_id: 1234
-				}, function (o) {
-					console.log(o);
-				});
+
 			}
 		});
 		$('#call_me').arcticmodal('close');
@@ -210,9 +205,6 @@ $('#usloviya').click(function () {
 });
 
 
-
-
-
 $('.questions_block .ah2').click(function () {
 	$(this).toggleClass('active').siblings('p').slideToggle();
 });
@@ -228,7 +220,6 @@ $(document).ready(function () {
 			"<div class='prev'></div>",
 			"<div class='next'></div>"
 		],
-		autoplay: true,
 		responsive: {
 			// breakpoint from 0 up
 			0: {
@@ -253,8 +244,8 @@ $(document).ready(function () {
 
 				margin: 25,
 			},
-			1251: {
-				items: 3,
+			1501: {
+				items: 5,
 				nav: true,
 				center: false,
 
@@ -338,7 +329,9 @@ $(document).ready(function () {
 			$('.call_me').click(function (e) {
 				$('#call_me').arcticmodal();
 				$('#title').text('');
+				$('#price').text('');
 				$(this).parent().prev().prev().clone().appendTo('#title');
+				$(this).prev().clone().appendTo('#price');
 				var fieldValue = $(this).parent().prev().prev().text();
 				$('#VACANCY').val(fieldValue);
 			});
@@ -384,4 +377,17 @@ $(document).ready(function () {
 			});
 
 		}, 3000);
+});
+
+$('.owl-special').owlCarousel({
+    center: true,
+    items:1,
+    loop:true,
+    margin:10,
+    nav:false,
+    dots: true,
+    autoWidth:true,
+    margin:88,
+    autoplay:true,
+    autoplayTimeout:3000
 });

@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-$myaddr = "promoconnect@ecotelecom.ru";
+$myaddr = "op@ecotelecom.ru";
 
 
 
