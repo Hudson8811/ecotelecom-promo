@@ -500,12 +500,12 @@ main {
 }
 
 .inputbox:-0-input-placeholder {
-				opacity: 1;
-				-webkit-transition: opacity 0.3s ease;
-				-o-transition: opacity 0.3s ease;
-				transition: opacity 0.3s ease;
-				color: #807e7e;
-			}
+	opacity: 1;
+	-webkit-transition: opacity 0.3s ease;
+	-o-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+	color: #807e7e;
+}
 
 .inputbox:input-placeholder {
 	opacity: 1;
@@ -1235,7 +1235,8 @@ box-shadow:         0px 2px 5px 0px rgba(0, 0, 0, 0.43);}
 
 	margin-right: 12px;
 }
-.tarif .main .item .ico img{
+
+.tarif .main .item .ico img {
 	width: 32px;
 	height: 32px;
 	-o-object-fit: contain;
@@ -1264,6 +1265,7 @@ box-shadow:         0px 2px 5px 0px rgba(0, 0, 0, 0.43);}
 	font-size: 14px;
 	font-weight: 400;
 }
+
 .tarif .main .item .desc {
 	font-family: Roboto;
 	color: #454545;
@@ -1272,9 +1274,11 @@ box-shadow:         0px 2px 5px 0px rgba(0, 0, 0, 0.43);}
 	font-weight: 400;
 
 }
-.tarif .main .item .name+.desc{
+
+.tarif .main .item .name+.desc {
 	margin-top: -7px;
 }
+
 .tarif .main .item .desc a {
 	color: inherit;
 	text-decoration: underline;
@@ -1417,8 +1421,8 @@ box-shadow:         0px 2px 5px 0px rgba(0, 0, 0, 0.43);}
 }
 
 .free_form form .inputbox:-0-input-placeholder {
-								color: #fff;
-							}
+	color: #fff;
+}
 
 .free_form form .inputbox:input-placeholder {
 	color: #fff;
@@ -1721,22 +1725,22 @@ box-shadow:         0px 2px 5px 0px rgba(0, 0, 0, 0.43);}
 }
 
 .questions_block .block:nth-child(2) {
-	border-left-color: #ffab0e;
+	border-left-color: #059c9e;
 }
 
 .questions_block .block:nth-child(3) {
-	border-left-color: #ff940e;
+	border-left-color: #185170;
 }
 
 .questions_block .block:nth-child(4) {
-	border-left-color: #ff3b38;
+	border-left-color: #00b0aa;
 }
 
 
 .questions_block .ah1 {}
 
 .questions_block .block {
-	border-left: 5px solid #ffc612;
+	border-left: 5px solid #21315d;
 }
 
 .questions_block .block .ah2 {
@@ -2041,15 +2045,13 @@ box-shadow:         0px 2px 5px 0px rgba(0, 0, 0, 0.43);}
 
 	line-height: 24px;
 
-a {
-	text-decoration: underline;
-}
+	a {
+		text-decoration: underline;
+	}
 }
 
 .form_block .personal_container {
-
 	padding-left: 58px;
-
 	margin-top: -8px;
 }
 
@@ -2235,7 +2237,7 @@ body {
 
 /***********************************************************************************************************start*/
 
-.equipment_block .traif-wrap .container{
+.equipment_block .traif-wrap .container {
 	max-width: 1016px;
 }
 
@@ -2635,11 +2637,11 @@ body {
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
 
-&:hover {
-	 -webkit-transform: scale(1, 1);
-	 -ms-transform: scale(1, 1);
-	 transform: scale(1, 1);
- }
+	&:hover {
+		-webkit-transform: scale(1, 1);
+		-ms-transform: scale(1, 1);
+		transform: scale(1, 1);
+	}
 }
 
 
