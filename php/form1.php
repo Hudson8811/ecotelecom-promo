@@ -1,10 +1,19 @@
-﻿<?php
-if (isset($_POST['call-control']) && $_POST['call-control'] == 0){
-    $myaddr = "<trigun123@yandex.ru>" . ", " ;
-    $myaddr .= "<kvaskov@ecotelecom.ru>" . ", " ;
-    $myaddr .= "<sharonov.ecotelecom@gmail.com>" . ", " ;
-    $myaddr .= "<hr@ecotelecom.ru>";
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META HTTP-EQUIV="Refresh" CONTENT="2; URL=http://site.ru">
+</head>
+<body>
+<?php
+$myaddr = "op@ecotelecom.ru";
 
+
+
+
+
+if (isset($_POST['call-control']) && $_POST['call-control'] == 0){
+	
 	$name = $_POST['name'];
 	$city = $_POST['city'];
 	$number = $_POST['number'];
@@ -17,8 +26,8 @@ if (isset($_POST['call-control']) && $_POST['call-control'] == 0){
 	
 	$headers = "MIME-Version: 1.0\r\n";
 	$headers = "Content-Type: text/plain;charset=utf-8";
-  	$headers = "From: order@ecotelecom.ru";
-	$subj = "=?utf-8?b?".base64_encode('Заявка с лэндинга')."?=";
+  	$headers = "From: promo@ecotelecom.ru";
+	$subj = "=?utf-8?b?".base64_encode('Заявка с лэндинга Акция "Улетное предложение"')."?=";
 	$text = "Имя: ".$name." \nТелефон: ".$number." \nГород: ".$city." \nАдрес: ".$address;
 	
 	if (!empty($utm_source)) $text .= "\nИсточник перехода по ссылке:".$utm_source;
@@ -29,7 +38,8 @@ if (isset($_POST['call-control']) && $_POST['call-control'] == 0){
 	
 	if (!empty($utm_term)) $text .= "\nКлючевые слова:".$utm_term;
 	
-	mail($myaddr, $subj, $text, $headers);
-	return true;
-	} else {echo "Нет ПОСТА";}
-?>
+	mail($myaddr, $subj, $text, $headers, $from);
+	
+	} else {echo "Нет ПОСТА";} 
+	?>
+	</body></html>

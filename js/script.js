@@ -12,7 +12,6 @@ $(function () {
 	});
 
 });
-
 $(document).ready(function(){
 	$(".input-mask").inputmask({
 		mask: "+7 (*99) 999-99-99",
@@ -24,7 +23,6 @@ $(document).ready(function(){
 		}
 	});
 });
-
 $(document).ready(function () {
 	function falidator(item) {
 			check = true;
@@ -55,7 +53,7 @@ $(document).ready(function () {
 			url: "php/form1.php",
 			data: data,
 			success: function (html) {
-				yaCounter47175648.reachGoal('order');
+				yaCounter49966909.reachGoal('order');
 				gtag('event', 'order');
 				gtag('event', 'submit',{'event_category': 'goal'});
 			},
@@ -84,7 +82,7 @@ $(document).ready(function () {
 			url: "php/form0.php",
 			data: data,
 			success: function (html) {
-				yaCounter47175648.reachGoal('order');
+				yaCounter49966909.reachGoal('order');
 				gtag('event', 'order');
 				gtag('event', 'submit',{'event_category': 'goal'});
 			},
@@ -112,9 +110,11 @@ function setPhone(ref, phone) {
 }
 
 var phones = {
-	'opm_7857' : '(495) 801 78 57',
-	'opm_7855': '(495) 801 78 55',
-	'opm_7851' : '(495) 801 78 51',
+	'yandex': '(499) 505 56 27',
+	'google': '(499) 505 56 12',
+	'vk': '(499) 505 56 85',
+	'yandex_audience': '(499) 505 57 63',
+	'mobile': '(499) 505 57 69'
 };
 
 $(document).ready(function () {
